@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Honk&display=swap'); /*font import*/
+@import url('https://fonts.googleapis.com/css2?family=Honk&family=Jura:wght@300..700&display=swap'); /*font import*/
+
+#css-zen-garden::before {
+    content: ""; /*Creates the element thats made before the #css-zen-garden element Im using to add the image without messing with the rest of the file.*/
+    position: absolute; /*Postions the element (or pseudo element in case) absolutely compared to other elements*/
+    top: 0; /*postions to the top most spot*/
+    left: 0; /*postiions to the left most spot. without it thered be a margin on the edge of the webpage*/
+    width: 100%; /*Sets the width to fit the entire page*/
+    height: 100%; /*Sets the hieght to fit the entire page*/
+    background-image: url(image/neonbackground.jpg); /*inserts the background*/
+    opacity: 0.8; /*Set the opacity level*/
+    z-index: -1; /*Sends the image behind other content*/
+}
+
+.page-wrapper {
+    display: grid; /*This turns the container into a grid*/
+    grid-template-areas: /*These define the spaces within a 6x3 grid with banner banner... taking the entire top row main main... right right taking shares the 2nd row with 2 columns and footer... like the header taking the whole row*/
+      'header main main'
+      'aside main main'
+      'footer footer footer';
+    gap: 10px; /*applies a 10px gap between the rows and columns of a grid*/
+    color: rgb(255, 255, 255); /*The page now had white text*/
+    font-family: "Jura", sans-serif; /*sets the displayed font*/
+    font-size: 15px; /*The size of all font*/
+    font-weight: bold; /*Boldens all the text*/
+    padding: 15px 15px 15px; /* top right bottom left */ 
+}
+
+.intro{
+    grid-area: header; /*Assigns this area to the banner grid area above*/
+    background-color: rgba(0, 0, 255, 0.2); /* Blue with 50% opacity */
+}
+
+
+#zen-supporting {
+    grid-area: main; /*Assigns this area to he main grid area above*/
+    background-color: rgba(255, 0, 0, 0.2); /* Blue with 50% opacity */
+
+}
+
+.sidebar {
+    grid-area: aside;
+    background-color: rgba(0, 255, 0, 0.2); /* Blue with 50% opacity */
+    font-weight: bolder;
+}
+
+footer {
+    grid-area: footer; /*Assigns this area to he footer grid area above*/
+    position: absolute; /*Declares the selector postion as absolute so other containers do not interfere with it*/
+    background-color: rgb(0, 0, 0);  /*sets the background color*/
+    margin-top: 40px; /*The footer is 40px the main container*/
+    padding-top: 100px; /*the content within the footer is 100px away from its border*/
+    left: 0; /*centers the footer*/
+    right: 0; /*centers the footer*/
+    width: auto; /*the width of the element is 100% of the view port*/
+    height: 140px; /*the hieght of the element is 3x the fontsize within*/
+    text-align: center; /*the text is aligned in the center of its element*/
+    word-spacing: 200px; /*each word in the border is 200px apart*/
+    font-size: 20px; /*increases the font size*/
+}
+
+[role="contentinfo"] {
+    font-size: 20px; /*increases the font size*/
+    font-style: italic; /*italicizes the font*/
+}
+
+a {
+    color: yellow; /*all links are yellow by default*/
+}
+
+a:hover {
+    color: rgb(255, 166, 0);; /*hovering the mouse over a link will change the font color to a darker blue*/
+}
+
+a:visited {
+    color:mediumpurple ; /* Link when hovered */
+}
+
+h1, h2 {
+    text-align: center; /*h1 and h2 are centered within their containers*/
+    font-family: "Honk", system-ui; /*applies a new font size*/
+    font-size: 30px; /*increases the font size*/
+    font-style: italic; /*italicizes the font*/
+    text-transform: uppercase; /*changes the letters within the h1, h2 to be uppercase*/
+}
+
+h3 {
+    font-style: italic; /*italicizes the font*/
+    text-transform: uppercase; /*changes the letters within the h1, h2 to be uppercase*/
+    color: rgb(255, 166, 0); /*changes the font color*/
+}
+
+p:first-of-type {
+    text-indent: 20px; /*adds an indent to each "first" p element*/
+}
